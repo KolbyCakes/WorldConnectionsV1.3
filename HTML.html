@@ -93,21 +93,28 @@ window.addEventListener("load", function(){
 </div>
 
 <script type="text/javascript">
-function slideOpen(el){
-var elem = document.getElementById(el);
-elem.style.transition = "height 0.5s linear 0s";
-elem.style.height = "100px";
-}
-function slideClosed(el){
-var elem = document.getElementById(el);
-elem.style.transition = "height 0.5s linear 0s";
-elem.style.height = "0px";
+function slideOpenClose(open el){
+	if (open == "open") {
+		var elem = document.getElementById(el);
+		elem.style.transition = "height 0.5s linear 0s";
+		elem.style.height = "100px";
+		var mxynew = "slideOpenClose('close', 'box1');"
+		var mxyhtml = '<div id="mxy"> <button onclick="' + mxynew + '">close mouse X,Y</button> </div>'
+		document.getElementById("mxy").innerHTML = mxyhtml;
+	} else if (open == "close") {
+		var elem = document.getElementById(el);
+		elem.style.transition = "height 0.5s linear 0s";
+		elem.style.height = "0px";
+		var mxynew = "slideOpenClose('open', 'box1');"
+		var mxyhtml = '<div id="mxy"> <button onclick="' + mxynew + '">open mouse X,Y</button> </div>'
+		document.getElementById("mxy").innerHTML = mxyhtml;
+	}
 }
 </script>
 <center><p><h1>Contact zombiehobo1023@gmail.com for questions</h1></p></center>
 
-<button onclick="slideOpen('box1');">open mouse X,Y</button>
-<button onclick="slideClosed('box1');">close mouse X,Y</button>
+<div id="mxy"> <button onclick="slideOpenClose('open', 'box1');">open mouse X,Y</button> </div>
+<!--<button onclick="slideClosed('box1');">close mouse X,Y</button>-->
 <div id="box1">
 <h2 id="x_result">0</h2>
 <h2 id="y_result">0</h2>
