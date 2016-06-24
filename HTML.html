@@ -93,7 +93,11 @@ window.addEventListener("load", function(){
 </div>
 
 <script type="text/javascript">
-function slideOpenClose(open el){
+// Updated by Isaiah Patton
+// 	Changes: 
+// uses one button for both
+// open and close
+function slideOpenClose(open, el){
 	if (open == "open") {
 		var elem = document.getElementById(el);
 		elem.style.transition = "height 0.5s linear 0s";
